@@ -4,8 +4,12 @@ import "./index.css";
 
 function List() {
   return <div className="List">
-    asdasdasd
-    <Item ></Item>
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
   </div>;
 }
 
