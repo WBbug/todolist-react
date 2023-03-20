@@ -1,12 +1,10 @@
-import { checkPrime } from "crypto";
-import React from "react";
 import "./index.css";
 
-function Item() {
+function Item(props:any) {
   return (
     <div className="item-container">
       <input type="checkbox" />
-      <div> asdasdasd</div>
+      <div> {props.value}</div>
     </div>
   );
 }

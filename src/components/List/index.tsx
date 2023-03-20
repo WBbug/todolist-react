@@ -1,16 +1,14 @@
-import React from "react";
+import { ItemType } from "../../type/List";
 import Item from "../Item";
 import "./index.css";
 
-function List() {
-  return <div className="List">
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-  </div>;
+function List(props:{todoList:ItemType[]}) {
+
+  return (
+    <div className="List">
+      <Item todoItem={props.todoList} />
+    </div>
+  );
 }
 
 export default List;
