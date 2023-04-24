@@ -1,14 +1,22 @@
+import { Component, ReactNode } from "react";
 import { ItemType } from "../../type/List";
 import Item from "../Item";
 import "./index.css";
 
-function List(props:{todoList:ItemType[]}) {
+export default class List extends Component<{ todoList: ItemType[] }> {
+  state = {
+    list: [],
+  };
 
-  return (
-    <div className="List">
-      <Item todoItem={props.todoList} />
-    </div>
-  );
+  render(): ReactNode {
+    const list = this.props.todoList;
+
+    return (
+      <div className="list">
+        {list.map((item, index) => {
+          return <Item key={index} item={item} />;
+        })}
+      </div>
+    );
+  }
 }
-
-export default List;

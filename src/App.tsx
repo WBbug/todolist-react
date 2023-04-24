@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props: { list: ItemType }) {
     super(props);
     this.state = {
-      list: [],
+      list: [{ title: "111", isFinish: false }],
     };
   }
 
@@ -25,10 +25,11 @@ class App extends React.Component {
   };
 
   render(): React.ReactNode {
+    const list = this.state.list;
     return (
       <div className="todo-list-container">
         <Header addListItem={this.addListItem} />
-        <List todoList={this.state.list} />
+        <List todoList={list} />
         <Footer />
       </div>
     );

@@ -1,6 +1,12 @@
-.List{
-    border: 1px solid #999;
-    border-radius: 5px;
-    height: 180px;
-    overflow: auto;
+.list {
+  border: 1px solid #999;
+  border-radius: 5px;
+  height: 180px;
+  overflow: auto;
+}
+.item-container {
+  padding: 0 20px;
+}
+.item-container .button {
+  margin-left: auto;
 }
