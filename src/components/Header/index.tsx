@@ -3,16 +3,19 @@ import { ItemType } from "../../type/List";
 import "./index.css";
 
 function Header(props: { addListItem: (item: ItemType) => void }) {
-  const [input, setInputValue] = useState("");
+  let [input, setInputValue] = useState("");
 
   function handleKey(event: any) {
     if (event.code === "Enter") {
       props.addListItem({ title: input, isFinish: false });
+      setInputValue('');
     }
+
   }
 
   function handleInputChange(event: any) {
     setInputValue(event.target.value);
+    
   }
 
   return (
