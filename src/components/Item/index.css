@@ -1,6 +1,13 @@
-.item-container{
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid;
+.item-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+.button {
+  visibility: hidden;
+  cursor: pointer;
+}
+.item-container:hover .button {
+  visibility: visible;
 }

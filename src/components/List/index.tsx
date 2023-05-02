@@ -3,7 +3,10 @@ import { ItemType } from "../../type/List";
 import Item from "../Item";
 import "./index.css";
 
-export default class List extends Component<{ todoList: ItemType[] }> {
+export default class List extends Component<{
+  todoList: ItemType[];
+  changeItem: (item: ItemType) => void;
+}> {
   state = {
     list: [],
   };
@@ -14,7 +17,9 @@ export default class List extends Component<{ todoList: ItemType[] }> {
     return (
       <div className="list">
         {list.map((item, index) => {
-          return <Item key={index} item={item} />;
+          return (
+            <Item key={index} item={item} changeItem={this.props.changeItem} />
+          );
         })}
       </div>
     );

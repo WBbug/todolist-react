@@ -24,13 +24,35 @@ class App extends React.Component {
     this.setState({ list });
   };
 
+  clearListItem = () => {
+    this.setState({ list: [] });
+  };
+
+  setAllFinish = (isFinish: boolean) => {
+    const list = this.state.list.map((item) => {
+      return { ...item, isFinish };
+    });
+    this.setState({ list });
+  };
+
+  changeItem = (item: ItemType) => {
+    const index = this.state.list.indexOf(item);
+    const list = this.state.list;
+    list[index].isFinish = !list[index].isFinish;
+    this.setState({ list });
+  };
+
   render(): React.ReactNode {
     const list = this.state.list;
     return (
       <div className="todo-list-container">
         <Header addListItem={this.addListItem} />
-        <List todoList={list} />
-        <Footer />
+        <List todoList={list} changeItem={this.changeItem} />
+        <Footer
+          todoList={list}
+          clearListItem={this.clearListItem}
+          setFinish={this.setAllFinish}
+        />
       </div>
     );
   }
